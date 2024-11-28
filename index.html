@@ -5,55 +5,8 @@
     <title>WebSocket 클라이언트</title>
 </head>
 <body>
-    <h1>WebSocket 테스트</h1>
-    <input id="message" type="text" placeholder="메시지를 입력하세요" />
-    <button id="sendButton">전송</button>
-    <div id="log"></div>
-
-    <script>
-        const logDiv = document.getElementById("log");
-        const inputField = document.getElementById("message");
-        const sendButton = document.getElementById("sendButton");
-
-        // WebSocket 서버와 연결
-        const socket = new WebSocket("ws://127.0.0.1:8765/ws");
-
-        // 연결이 열렸을 때 실행
-        socket.onopen = () => {
-            log("WebSocket 연결 성공!");
-        };
-
-        // 메시지를 수신했을 때 실행
-        socket.onmessage = (event) => {
-            log(`서버로부터 수신된 메시지: ${event.data}`);
-        };
-
-        // 연결이 닫혔을 때 실행
-        socket.onclose = () => {
-            log("WebSocket 연결 종료");
-        };
-
-        // 오류가 발생했을 때 실행
-        socket.onerror = (error) => {
-            log(`WebSocket 오류: ${error.message}`);
-        };
-
-        // 메시지 전송 버튼 클릭
-        sendButton.addEventListener("click", () => {
-            const message = inputField.value;
-            if (message) {
-                socket.send(message);
-                log(`클라이언트에서 보낸 메시지: ${message}`);
-                inputField.value = "";
-            }
-        });
-
-        // 로그 출력 함수
-        function log(message) {
-            const logEntry = document.createElement("div");
-            logEntry.textContent = message;
-            logDiv.appendChild(logEntry);
-        }
-    </script>
+    <a href="mainpy.html">fastapi</a>
+    <a href="forrecoder.html">recoder</a>
+    
 </body>
 </html>
